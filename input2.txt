@@ -1,0 +1,41 @@
+1
+Project Risk Estimation
+The problem is to estimate the risk level of a project based on the project
+funding and the technical experience of the project’s team members.
+1
+dirt IN [0,100]
+fabric IN [0,60]
+Wash_time OUT [0,100]
+x
+2
+dirt
+small TRAP 0 0 20 40
+medium TRAP 20 40 60 80
+large TRAP 60 80 100 100
+x
+2
+fabric
+soft TRAP 0 0 20 40
+ordinary TRAP 20 40 60 80
+stiff TRAP 60 80 100 100
+x
+2
+Wash_time
+v_small TRI 0 0 15
+small TRI 0 15 30
+standard TRI 15 30 45
+large TRI 30 45 60
+v_large TRI 45 60 60
+x
+3
+dirt small and fabric soft => Wash_time v_small
+dirt medium and fabric ordinary => Wash_time standard
+dirt small and_not fabric soft or dirt medium and fabric soft => Wash_time small
+dirt medium and fabric stiff => Wash_time large
+dirt large and_not fabric soft => Wash_time v_large
+dirt large and fabric soft => Wash_time standard
+x
+4
+60
+25
+Close
